@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>메인뷰</title>
+		<script src="jquery-3.6.0.js"></script>
+	</head>
+	<!-- ----------------------- -->
+	<body>
+		<form name="search" method="get" action="index.html">
+			<table border="1" style="text-align:center; width:1000px; height:100px; margin:auto; margin-bottom:30px;" >
+				<tr>
+					<td width="180px"><a href="index.html">바꿔바꿔</a></td>
+					<td width="640px">		
+						<input type="text" name="key" size="10" value="검색창" style="width:350px; height:40px">
+						<input type="submit" value="검색">
+					</td>
+					<td width="180px">
+						<span style="font-size:15px;">어서오세요</span><br>
+						<span style="font-size:25px; color:red;"><a href="my_info.html">GOM님</a></span><br>
+						<span><a href="first_view.html">로그아웃</a></span>
+					</td>				
+				</tr>
+			</table>
+		</form>	
+		<style>
+		.box 
+		{
+ 			 float: none;
+		}
+		</style>
+		<!-------------------이하 콘텐츠--------------- -->
+		<form name="delete" method="post" action="deleteok.html">
+			<table border="1" style="text-align:center; width:300px; height:200px; margin:auto;">
+				<tr>
+					<td> 정말로 삭제하시겠습니까?</td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="예"> &nbsp;&nbsp;&nbsp;<input type="button" value="아니오" onclick="location.href='view.html'"></td>
+				</tr>
+			</table>
+		</form>	
+		<!-- -----------이하 콘텐츠--------------- -->
+		<table border="1" style="width:1000px; height:100px; margin:auto; margin-top:30px;">
+			<tr>
+				<td rowspan="2" width="180px" style="text-align:center;">로고</td>
+				<td width="820px">이메일, 제휴문의 <br> 주소, 사업자문의</td>				
+			</tr>
+		</table>		
+	</body>
+</html>

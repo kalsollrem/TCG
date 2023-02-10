@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>메인뷰</title>
+		<link rel="stylesheet" href="css/sheet.css">
+		<script src="Include/jquery-3.6.0.js"></script>
+	</head>
+	<!-- ----------------------- -->
+
+	<script>
+	$(document).ready(function(){ 
+		$("#spread_menu").click(function(){ 
+			if($("#my_memu").is(":visible")){ 
+				$("#my_memu").slideUp(); 
+			}
+			else
+			{ 
+				$("#my_memu").slideDown(); 
+			} 
+		}); 
+	});
+	
+	$(document).ready(function() {
+	
+		var floatPosition = parseInt($("#floatMenu").css('top'));
+	
+		$(window).scroll(function() {
+			var scrollTop = $(window).scrollTop();
+			var newPosition = scrollTop + floatPosition + "px";
+			$("#floatMenu").css('top', newPosition);
+			$("#floatMenu").stop().animate({
+			"top" : newPosition
+			}, 500);
+		}).scroll();
+	});
+	</script>
+	
+	<div id="floatMenu">
+		<button id="spread_menu" class="btn01">( + )</button> 
+		<div id="my_memu" class="hold_on" style="display: none;">
+			<div id="my_memu_1"> <a href="my_info.html">내 정보</a></div>
+			<div id="my_memu_2"> <a href="my_poket.html">찜 목록</a></div>
+			<div id="my_memu_3"> <a href="write.html">판매하기</a></div>
+		</div>
+	</div>
+	
+	<body>
+		<form name="search" method="get" action="index.html">
+			<table border="1" style="text-align:center; width:1000px; height:100px; margin:auto; margin-bottom:30px;">
+				<tr>
+					<td width="180px"><a href="index.html">바꿔바꿔</a></td>
+					<td width="640px">		
+						<input type="text" name="key" size="10" value="검색창" style="width:350px; height:40px">
+						<input type="submit" value="검색">
+					</td>
+					<td width="180px">
+						<span style="font-size:15px;">어서오세요</span><br>
+						<span style="font-size:25px; color:red;"><a href="my_info.html">GOM님</a></span><br>
+						<span><a href="first_view.html">로그아웃</a></span>
+					</td>
+				</tr>
+			</table>
+		</form>	
+		
+		<style>
+		.box 
+		{
+ 			 float: none;
+		}
+		</style>
+		<!-------------------이하 콘텐츠--------------- -->
+		<script>
+
+		</script>
+
+		<form>
+			<table border="1" style="width:1000px; margin:auto;">
+				<tr >
+					<td style="text-align:center; height:70px"> 
+						<div>최신매물</div>
+						<div style="margin-left:850px;">
+							<select name="prefer">
+								<option value="new" selected>최신순</option>
+								<option value="old" selected>최신순</option>
+								<option value="low_high">오름차순</option>					
+								<option value="high_low">내림차순</option>					
+							</select>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<table border="1" style="width:1000px; margin:auto;">
+				<tr>
+					<td class="box">
+				 		<div style="width:190px; height:200px; text-align:center;">
+				 			<a href="view.html"><img src="image/card.png" height="100%"></a><br>
+				 		</div>
+				 		<div><span style="width:50px">품목명 : </span> <span>와이트</span></div>
+				 		<div><span style="width:50px">가격 :</span> <span>100원</span></div>
+					 </td>
+					<td class="box">
+				 		<div style="width:190px; height:200px; text-align:center;">
+				 			<a href="view.html"><img src="image/card.png" height="100%"></a><br>
+				 		</div>
+				 		<div><span style="width:50px">품목명 : </span> <span>와이트</span></div>
+				 		<div><span style="width:50px">가격 :</span> <span>100원</span></div>
+					 </td>
+					<td class="box">
+				 		<div style="width:190px; height:200px; text-align:center;">
+				 			<a href="view.html"><img src="image/card.png" height="100%"></a><br>
+				 		</div>
+				 		<div><span style="width:50px">품목명 : </span> <span>와이트</span></div>
+				 		<div><span style="width:50px">가격 :</span> <span>100원</span></div>
+					 </td>
+					<td class="box">
+				 		<div style="width:190px; height:200px; text-align:center;">
+				 			<a href="view.html"><img src="image/card.png" height="100%"></a><br>
+				 		</div>
+				 		<div><span style="width:50px">품목명 : </span> <span>와이트</span></div>
+				 		<div><span style="width:50px">가격 :</span> <span>100원</span></div>
+					 </td>
+					<td class="box">
+				 		<div style="width:190px; height:200px; text-align:center;">
+				 			<a href="view.html"><img src="image/card.png" height="100%"></a><br>
+				 		</div>
+				 		<div><span style="width:50px">품목명 : </span> <span>와이트</span></div>
+				 		<div><span style="width:50px">가격 :</span> <span>100원</span></div>
+					 </td>
+				</tr>
+				<tr>
+					<td class="box">
+				 		<div style="width:190px; height:200px; text-align:center;">
+				 			<a href="view.html"><img src="image/card.png" height="100%"></a><br>
+				 		</div>
+				 		<div><span style="width:50px">품목명 : </span> <span>와이트</span></div>
+				 		<div><span style="width:50px">가격 :</span> <span>100원</span></div>
+					 </td>
+					<td class="box">
+				 		<div style="width:190px; height:200px; text-align:center;">
+				 			<a href="view.html"><img src="image/card.png" height="100%"></a><br>
+				 		</div>
+				 		<div><span style="width:50px">품목명 : </span> <span>와이트</span></div>
+				 		<div><span style="width:50px">가격 :</span> <span>100원</span></div>
+					 </td>
+					<td class="box">
+				 		<div style="width:190px; height:200px; text-align:center;">
+				 			<a href="view.html"><img src="image/card.png" height="100%"></a><br>
+				 		</div>
+				 		<div><span style="width:50px">품목명 : </span> <span>와이트</span></div>
+				 		<div><span style="width:50px">가격 :</span> <span>100원</span></div>
+					 </td>
+					<td class="box">
+				 		<div style="width:190px; height:200px; text-align:center;">
+				 			<a href="view.html"><img src="image/card.png" height="100%"></a><br>
+				 		</div>
+				 		<div><span style="width:50px">품목명 : </span> <span>와이트</span></div>
+				 		<div><span style="width:50px">가격 :</span> <span>100원</span></div>
+					 </td>
+					<td class="box">
+				 		<div style="width:190px; height:200px; text-align:center;">
+				 			<a href="view.html"><img src="image/card.png" height="100%"></a><br>
+				 		</div>
+				 		<div><span style="width:50px">품목명 : </span> <span>와이트</span></div>
+				 		<div><span style="width:50px">가격 :</span> <span>100원</span></div>
+					 </td>
+				</tr>
+			</table>
+			<table border="1" style="width:1000px; margin:auto; text-align:center;">
+				<tr>
+					<td height="70px"> ◀ 1 2 3 4 5 6 7 8 9  ▶</td>
+				</tr>	
+			</table>	
+		</form>
+		<!-- -----------이하 콘텐츠--------------- -->
+		<table border="1" style="width:1000px; height:100px; margin:auto; margin-top:30px;">
+			<tr>
+				<td rowspan="2" width="180px" style="text-align:center;">로고</td>
+				<td width="820px">이메일, 제휴문의 <br> 주소, 사업자문의</td>				
+			</tr>
+		</table>		
+	</body>
+</html>

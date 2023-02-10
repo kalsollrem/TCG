@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>가입(약관)</title>
+		<script src="jquery-3.6.0.js"></script>
+	</head>
+	<style>
+		table.space
+		{
+		  	border-collapse: separate;
+  			border-spacing: 0 50px;
+		}
+	</style>
+	<!-- ----------------------- -->
+	<body>
+		<form name="search" method="get" action="index.html">
+			<table border="1" style="text-align:center; width:1000px; height:100px; margin:auto; margin-bottom:30px;">
+				<tr>
+					<td width="180px"><a href="index.html">바꿔바꿔</a></td>
+					<td width="640px">		
+						<input type="text" name="key" size="10" value="검색창" style="width:350px; height:40px">
+						<input type="submit" value="검색">
+					</td>
+					<td width="180px">
+						<span style="font-size:15px;">어서오세요</span><br>
+						<span style="font-size:25px; color:red;"><a href="my_info.html">GOM님</a></span><br>
+						<span><a href="first_view.html">로그아웃</a></span>
+					</td>	
+				</tr>
+			</table>
+		</form>	
+		<!-- -----------이하 콘텐츠--------------- -->
+		<table class="space"><tr><td></td></tr></table>
+		
+		<form name="join_do_it" method="get" action="join_r.html">	
+			<table style="width:640px; margin:auto;" border="1" >	
+				<tr>
+					<td>회원가입</td>
+				</tr>
+				<tr style="text-align:center;">
+					<td height="200px" width="640px">
+						<div class="join_cheak" style="height:100%; width:100%; overflow-y:scroll;"> 
+<!-- -대충 이용약관-- -->						
+제1조(목적) ...	<br>
+제2조 (약관의 효력) ... <br>
+제3조 (약관 이외의 준칙) ... <br>
+제4조 (이용계약의 체결) 회원 가입 시 회원 약관 밑에 있는 동의버튼을 누르면 약관에 동의하여 이 계약이 체결된 것으로 간주한다. <br>
+제5조 (용어의 정의) ... <br>
+제6조 (이용신청) ... <br>
+제7조 (회원가입의 승낙) <br>
+제1조(목적) ...	<br>
+제2조 (약관의 효력) ... <br>
+제3조 (약관 이외의 준칙) ... <br>
+제4조 (이용계약의 체결) 회원 가입 시 회원 약관 밑에 있는 동의버튼을 누르면 약관에 동의하여 이 계약이 체결된 것으로 간주한다. <br>
+제5조 (용어의 정의) ... <br>
+제6조 (이용신청) ... <br>
+제7조 (회원가입의 승낙) <br>
+<!-- -대충 이용약관-- -->						
+
+						</div>											
+					</td>
+				</tr>		
+				<tr>
+					<td style="text-align:center">							
+					악관에 승낙하시겠습니까?<br><br>
+						<input type="radio" id="join_yes" name="read_cheak"><label for="join_yes">약관에 승낙합니다.</label>
+						<input type="radio" id="join_no" name="read_cheak" checked><label for="join_yes">약관을 거절합니다.</label>
+					</td>
+				</tr>		
+			</table>
+			<table style="margin:auto">
+				<tr>
+					<td><input type="submit" value="가입" style="width:120px; height:40px"></td>	
+					<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>			
+					<td><input type="button" value="가입취소" style="width:120px; height:40px" onclick="location.href='index.html'"></td>
+				</tr>
+			</table>
+		</form>						
+
+		<table class="space"><tr><td></td></tr></table>
+		<!-- -----------이하 콘텐츠--------------- -->
+		<table border="1" style="width:1000px; height:100px; margin:auto; margin-top:30px;">
+			<tr>
+				<td rowspan="2" width="180px" style="text-align:center;">로고</td>
+				<td width="820px">이메일, 제휴문의 <br> 주소, 사업자문의</td>				
+			</tr>
+		</table>		
+	</body>
+</html>

@@ -1,0 +1,97 @@
+create database tcgdb;
+
+use tcgdb;
+
+create table info
+(
+	mnum 	 INT  PRIMARY KEY auto_increment 	comment'고유번호',
+	mid 	 VARCHAR(100) 						comment'아이디',
+	mpw 	 VARCHAR(100) 						comment'비밀번호',
+	mname 	 VARCHAR(50) 						comment'이름',
+	mphone 	 VARCHAR(100) 						comment'전화번호',
+	mmail 	 VARCHAR(150) 						comment'메일주소',
+	msex 	 VARCHAR(2) 						comment'성별',
+	mmyself  text 								comment'자기소개',
+	mrank 	 FLOAT 								comment'내 평점',
+	mdelnum  INT								comment'총거래수',
+	mjindate DATETIME default now() 			comment'가입일',  
+	mlive 	 VARCHAR(2) default 'N'				comment'탈퇴여부'
+);
+
+CREATE TABLE infopic 
+(
+	mnum  	 INT  FOREIGN KEY (mnum) REFERENCES table info		comment'고유번호', 
+	pnum  	 INT          										comment'프로필 배정 번호',   
+	ppname 	 VARCHAR(255) 										comment'물리 프로필명',   
+	pfname 	 VARCHAR(255) 										comment'논리 프로필명',   
+	pno    	 INT auto_increment	         						comment'첨부번호'    
+);
+
+
+CREATE TABLE product 
+(
+	gnum    INT  PRIMARY KEY auto_increment       				comment'상품 고유 번호',
+	mnum    INT  FOREIGN KEY (mnum) REFERENCES table info  		comment'판매자 고유 번호',
+	gname   VARCHAR(255)										comment'상품명',
+	gdate   DATETIME default now()    			 				comment'등록일',
+	gdir    VARCHAR(2) default 'N'	 			 				comment'직 거래 여부', 
+	gmail   VARCHAR(2) default 'N'	 			 				comment'우편 거래 여부', 
+	gmyself TEXT        			 							comment'제품 설명', 
+	gvalue  INT         			 							comment'가격',
+	gpname  VARCHAR(255)			 							comment'물리 사진명', 
+	gfname  VARCHAR(255)			 							comment'논리 사진명', 
+	gqty    INT 	        			 						comment'판매수량', 
+	gstate  VARCHAR(2) default 'A'	  							comment'거래 상태',
+	gdelsc  FLOAT       			 							comment'거래 평가점',
+	gbuysc  FLOAT      			  								comment'판매 평가점' 
+);
+
+CREATE TABLE propic 
+(
+	mnum   INT FOREIGN KEY (mnum) REFERENCES table info 		comment'판매자 고유 번호',
+	gnum   INT FOREIGN KEY (gnum) REFERENCES table product		comment'상품 고유 번호',
+	gpname VARCHAR(255) NULL									comment'물리 첨부 파일명',    
+	gfname VARCHAR(255) NULL									comment'논리 첨부 파일명',    
+	gno    INT auto_increment									comment'첨부번호'	 
+);
+
+
+CREATE TABLE buylist 
+(
+	mnum   INT FOREIGN KEY (mnum) REFERENCES table info 		comment'판매자 고유 번호',
+	gnum   INT FOREIGN KEY (gnum) REFERENCES table product		comment'상품 고유 번호',
+	blnum  INT auto_increment 									comment'구매 목록 번호'
+);
+
+
+CREATE TABLE sellist 
+(
+	mnum   INT FOREIGN KEY (mnum) REFERENCES table info 		comment'판매자 고유 번호',
+	gnum   INT FOREIGN KEY (gnum) REFERENCES table product		comment'상품 고유 번호',
+	ㄴlnum  INT auto_increment 									comment'판매 목록 번호'
+);
+
+
+CREATE TABLE poketlist 
+(
+	mnum   INT FOREIGN KEY (mnum) REFERENCES table info 		comment'판매자 고유 번호',
+	gnum   INT FOREIGN KEY (gnum) REFERENCES table product		comment'상품 고유 번호',
+	plnum  INT auto_increment 									comment'찜 목록 번호'
+);
+
+CREATE TABLE reply 
+(
+	mnum   INT FOREIGN KEY (mnum) REFERENCES table info 		comment'판매자 고유 번호',
+	tnum   INT auto_increment 									comment'대화창 번호',
+	rnum   INT auto_increment 									comment'댓글 번호',     									
+	rdate  DATETIME default now() 								comment'댓글 작성 시간',  
+	rnote  TEXT													comment'내용'
+);
+
+CREATE TABLE MY_SCHEMA.talk 
+(
+	tnum   INT PRIMARY KEY										comment'대화창 번호',	
+	gnum   INT FOREIGN KEY (gnum) REFERENCES table product		comment'상품 고유 번호',
+	rmnum  VARCHAR(255) 										comment'참가자 1의 이름',
+	rynum  VARCHAR(255) 										comment'참가자 2의 이름' 
+);

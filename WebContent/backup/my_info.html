@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>메인뷰</title>
+		<script src="jquery-3.6.0.js"></script>
+	</head>
+	<!-- ----------------------- -->
+	<style>
+	#floatMenu
+	{
+		width: 80px;
+		height: 80px;	
+		background-color: #ff7f00 ;
+		position:absolute; 
+		top:180px; 
+		right:50%; 
+		margin-right:-570px;
+		text-align:center;
+	}
+	#spread_menu
+	{
+		position: relative;
+		top : 30px
+	}
+	#my_memu
+	{
+		width: 100%;
+		height: 60px;		
+		background-color: #f4f4f4;	
+		border-bottom: 1px solid #black;
+		position: relative;
+		top : 60%
+	}
+	</style>
+	
+	<script>
+	$(document).ready(function(){ 
+		$("#spread_menu").click(function(){ 
+			if($("#my_memu").is(":visible")){ 
+				$("#my_memu").slideUp(); 
+			}
+			else
+			{ 
+				$("#my_memu").slideDown(); 
+			} 
+		}); 
+	});
+	
+	$(document).ready(function() {
+	
+		var floatPosition = parseInt($("#floatMenu").css('top'));
+	
+		$(window).scroll(function() {
+			var scrollTop = $(window).scrollTop();
+			var newPosition = scrollTop + floatPosition + "px";
+			$("#floatMenu").css('top', newPosition);
+			$("#floatMenu").stop().animate({
+			"top" : newPosition
+			}, 500);
+		}).scroll();
+	});
+	</script>	
+	
+	<div id="floatMenu">
+		<button id="spread_menu" class="btn01">( + )</button> 
+		<div id="my_memu" class="hold_on" style="display: none;">
+			<div id="my_memu_1"> <a href="my_info.html">내 정보</a></div>
+			<div id="my_memu_2"> <a href="my_poket.html">찜 목록</a></div>
+			<div id="my_memu_3"> <a href="write.html">판매하기</a></div>
+		</div>
+	</div>	
+	
+	<body>
+		<form name="search" method="get" action="index.html">
+			<table border="1" style="text-align:center; width:1000px; height:100px; margin:auto; margin-bottom:30px;">
+				<tr>
+					<td width="180px"><a href="index.html">바꿔바꿔</a></td>
+					<td width="640px">		
+						<input type="text" name="key" size="10" value="검색창" style="width:350px; height:40px">
+						<input type="submit" value="검색">
+					</td>
+					<td width="180px">
+						<span style="font-size:15px;">어서오세요</span><br>
+						<span style="font-size:25px; color:red;"><a href="my_info.html">GOM님</a></span><br>
+						<span><a href="first_view.html">로그아웃</a></span>
+					</td>
+				</tr>
+			</table>
+		</form>	
+		<!-------------------이하 콘텐츠--------------- -->
+		<table border="1" style="width:1000px; margin:auto;">
+			<tr>
+				<td rowspan="3" style="height:250px; width:250px"><img src="image/gom.png" style="height:250px; width:250px"></td>
+				<td>GOM</td>
+			</tr>
+			<tr>
+				<td>☆:4.9(거래수:2)</td>
+			</tr>
+			<tr>
+				<td>전주시 송천동</td>
+			</tr>
+			<tr>
+				<td colspan="2"> 
+					<table border="1" style="margin:auto; margin-top:30px; margin-bottom:30px; width:50%; text-align:center;">
+						<tr>
+							<td style="height:50px; width:180px;"><a href="sel_list.html">판매 목록</a></td> 
+							<td style="height:50px; width:180px;"><a href="buy_list.html">구매 목록</a></td> 
+							<td style="height:50px; width:180px;"><a href="my_poket.html">찜목록</a></td> 
+						</tr>
+					</table>
+				</td>
+				
+			</tr>
+		</table>	
+		<table>
+		
+		</table>
+		
+		
+		<!-- -----------이하 콘텐츠--------------- -->
+		<table border="1" style="width:1000px; height:100px; margin:auto; margin-top:30px;">
+			<tr>
+				<td rowspan="2" width="180px" style="text-align:center;">로고</td>
+				<td width="820px">이메일, 제휴문의 <br> 주소, 사업자문의</td>				
+			</tr>
+		</table>		
+	</body>
+</html>

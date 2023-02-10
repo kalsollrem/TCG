@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>메인뷰</title>
+		<script src="jquery-3.6.0.js"></script>
+	</head>
+	<!-- ----------------------- -->
+	<style>
+	#floatMenu
+	{
+		width: 80px;
+		height: 80px;	
+		background-color: #ff7f00 ;
+		position:absolute; 
+		top:180px; 
+		right:50%; 
+		margin-right:-570px;
+		text-align:center;
+	}
+	#spread_menu
+	{
+		position: relative;
+		top : 30px
+	}
+	#my_memu
+	{
+		width: 100%;
+		height: 60px;		
+		background-color: #f4f4f4;	
+		border-bottom: 1px solid #black;
+		position: relative;
+		top : 60%
+	}
+	.border_box
+	{
+		border: 1px solid black;
+	}
+	
+	.border_box_add
+	{
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+		border-bottom: 1px solid black;
+	}
+	.my_reply
+	{
+		position: relative;
+		left : 30px;
+		width: 500px; 
+		margin-top:30px; 
+		margin-bottom:30px; 		
+	}
+	.your_reply
+	{
+		position: relative;
+		left : 260px;
+		width: 500px; 
+		margin-top:30px; 
+		margin-bottom:30px; 		
+	}
+	
+	</style>
+	
+	<script>
+	$(document).ready(function(){ 
+		$("#spread_menu").click(function(){ 
+			if($("#my_memu").is(":visible")){ 
+				$("#my_memu").slideUp(); 
+			}
+			else
+			{ 
+				$("#my_memu").slideDown(); 
+			} 
+		}); 
+	});
+	
+	$(document).ready(function() {
+	
+		var floatPosition = parseInt($("#floatMenu").css('top'));
+	
+		$(window).scroll(function() {
+			var scrollTop = $(window).scrollTop();
+			var newPosition = scrollTop + floatPosition + "px";
+			$("#floatMenu").css('top', newPosition);
+			$("#floatMenu").stop().animate({
+			"top" : newPosition
+			}, 500);
+		}).scroll();
+	});
+	</script>	
+	
+	<div id="floatMenu">
+		<button id="spread_menu" class="btn01">( + )</button> 
+		<div id="my_memu" class="hold_on" style="display: none;">
+			<div id="my_memu_1"> <a href="my_info.html">내 정보</a></div>
+			<div id="my_memu_2"> <a href="my_poket.html">찜 목록</a></div>
+			<div id="my_memu_3"> <a href="write.html">판매하기</a></div>
+		</div>
+	</div>	
+	
+	<body>
+		<form name="search" method="get" action="index.html">
+			<table border="1" style="text-align:center; width:1000px; height:100px; margin:auto;  margin-bottom:30px;">
+				<tr>
+					<td width="180px"><a href="index.html">바꿔바꿔</a></td>
+					<td width="640px">		
+						<input type="text" name="key" size="10" value="검색창" style="width:350px; height:40px">
+						<input type="submit" value="검색">
+					</td>
+					<td width="180px">
+						<span style="font-size:15px;">어서오세요</span><br>
+						<span style="font-size:25px; color:red;"><a href="my_info.html">GOM님</a></span><br>
+						<span><a href="first_view.html">로그아웃</a></span>
+					</td>
+				</tr>
+			</table>
+		</form>	
+		<!-------------------이하 콘텐츠--------------- -->
+		<table border="1" style="width:200px; height:40px; margin:auto; margin-bottom:30px;">
+			<tr>
+				<td style="text-align:center;">
+					<a href="buy.html">목록으로 돌아가기</a>
+				</td>
+			</tr>
+		</table>
+		
+		<table border="1" style="width:800px; margin:auto;">
+		<tr>
+			<td style="width:100px; height:100px;">
+				<div style="text-align:center;"><img src="image/card.png" style="height:100px;"></div>
+			</td>
+			<td>
+				<div style="font-size:40px; margin-left:10px">와이트</div>
+				<div style="font-size:30px; margin-left:10px">100원</div>		
+			</td>
+		</tr>
+		</table>
+	
+
+		
+		<!---내 댓글 콘텐츠---- -->
+		<table border="1" style="width:800px; margin:auto;">
+			<tr>
+				<td>
+					<!---내 댓글 콘텐츠---- -->
+					<table class="my_reply" border="1">
+						<tr>
+							<td colspan="2">
+								<div class="q">
+									<span style="text-align:center;">&nbsp; GOM &nbsp;</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								&nbsp; 물건 파시는 분이시죠?
+							</td>
+						</tr>
+						<tr>
+							<td class="d" style="text-align:right; font-size:8px;"> 
+								<span style="text-align:center; border-right: 1px solid black;">&nbsp; 2021.12.04 &nbsp;</span>
+								<span style="text-align:center; ">&nbsp; 15:32:27 &nbsp;</span>
+							</td>
+						</tr>
+					</table>
+					<!---내 댓글 콘텐츠---- -->			
+					<!---상대 댓글 콘텐츠---- -->			
+					<table class="your_reply" border="1">
+						<tr>
+							<td rowspan="2" style="height:50px; width:50px"> 
+								<img src="image/id.jpg" style="height:50px; width:50px"></td>
+							<td>
+								<div class="q">
+									<span style="text-align:center;">&nbsp; 네고사절 &nbsp;</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="d"> 
+								<span style="text-align:center; border-right: 1px solid black;">&nbsp; 2021.12.04 &nbsp;</span>
+								<span style="text-align:center;">&nbsp; 15:33:17 &nbsp;</span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								&nbsp; 네 ㅎㅎ
+							</td>
+						</tr>
+					</table>
+					<!---상대 댓글 콘텐츠---- -->
+						
+					
+					<!---내 댓글 콘텐츠---- -->
+					
+					<table class="my_reply" border="1">
+						<tr>
+							<td rowspan="2" style="height:50px; width:50px"> 
+								<img src="image/gom.png" style="height:50px; width:50px"></td>
+							<td>
+								<div class="q">
+									<span style="text-align:center;">&nbsp; GOM &nbsp;</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="d"> 
+								<span style="text-align:center; border-right: 1px solid black;">&nbsp; 2021.12.04 &nbsp;</span>
+								<span style="text-align:center;">&nbsp; 15:32:27 &nbsp;</span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								&nbsp; 구매하실건가요?
+							</td>
+						</tr>
+					</table>
+					<!---내 댓글 콘텐츠---- -->			
+					<!---상대 댓글 콘텐츠---- -->			
+					<table class="your_reply" border="1">
+						<tr>
+							<td rowspan="2" style="height:50px; width:50px"> 
+								<img src="image/id.jpg" style="height:50px; width:50px"></td>
+							<td>
+								<div class="q">
+									<span style="text-align:center;">&nbsp; 네고사절 &nbsp;</span>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="d"> 
+								<span style="text-align:center; border-right: 1px solid black;">&nbsp; 2021.12.04 &nbsp;</span>
+								<span style="text-align:center;">&nbsp; 15:33:17 &nbsp;</span>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								&nbsp; 직거래 ㄱㄴ?<br> &nbsp;&nbsp;해주시면 다른것도 사드림
+							</td>
+						</tr>
+					</table>
+					<!---상대 댓글 콘텐츠---- -->						
+				</td>
+			</tr>
+		</table>
+
+		
+		<form name="reply_in" method="post" action="tel.html">
+			<table border="1" style="width:800px; height:150px; margin:auto;">
+				<tr>
+					<td>
+						<textarea name="reply_text" style="width:95%; height:150px;"></textarea>
+					</td>
+					<td>
+						<input type="submit" value="작성" style="width:95%; height:50%;">
+					</td>
+				</tr>
+			</table>	
+		</form>
+		
+			
+		<!-- -----------이하 콘텐츠--------------- -->
+		<table border="1" style="width:1000px; height:100px; margin:auto; margin-top:30px;">
+			<tr>
+				<td rowspan="2" width="180px" style="text-align:center;">로고</td>
+				<td width="820px">이메일, 제휴문의 <br> 주소, 사업자문의</td>				
+			</tr>
+		</table>		
+	</body>
+</html>
